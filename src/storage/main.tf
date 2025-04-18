@@ -9,11 +9,10 @@ resource "azurerm_storage_account" "site_storage_account" {
   location                 = azurerm_resource_group.main.location
   account_tier             = "Standard"
   account_replication_type = "LRS"
-}
 
-resource "azurerm_storage_account_static_website" "site_settings" {
-  storage_account_id = azurerm_storage_account.site_storage_account.id
-  index_document     = "index.html"
+  static_website {
+    index_document = "index.html"
+  }
 }
 
 resource "azurerm_role_assignment" "spn_blob_storage_contributor" {
