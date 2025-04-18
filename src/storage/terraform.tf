@@ -2,12 +2,19 @@ terraform {
   required_providers {
     azurerm = {
       source  = "hashicorp/azurerm"
-      version = "3.0.0"
+      version = "~>3.0.0"
     }
+    azuread = {
+      source  = "hashicorp/azuread"
+      version = "~>3.0.0"
+    }
+  }
+  backend "local" {
+
   }
 }
 
 provider "azurerm" {
-  resource_provider_registrations = "none"
+  skip_provider_registration = true
   features {}
 }
