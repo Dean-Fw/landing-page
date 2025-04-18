@@ -39,5 +39,10 @@ jobs:
         run: terraform validate -no-color
       - name: Terraform Plan
         id: plan
+        env:
+          ARM_CLIENT_ID: ${{ secrets.SPN_CLIENT_ID }}
+          ARM_CLIENT_SECRET: ${{ secrets.SPN_SECRET }}
+          ARM_TENANT_ID: ${{ secrets.SPN_TENANT_ID }}
+          ARM_SUBSCRIPTION_ID: ${{ secrets.SPN_SUBSCRIPTION_ID }}
         run: terraform plan -no-color
       
