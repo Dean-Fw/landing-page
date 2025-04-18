@@ -1,4 +1,4 @@
-name: Validate And Plan Terraform
+name: Validate Terraform
 on: 
   push:
     branches:
