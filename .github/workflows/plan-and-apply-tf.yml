@@ -1,0 +1,7 @@
+name: Plan And Apply Terraform
+on: [push]
+jobs:
+  Pipeline-Init:
+    runs-on: ubuntu-latest
+    steps:
+      run: echo "Hello, World!"
