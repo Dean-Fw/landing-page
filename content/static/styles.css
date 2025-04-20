@@ -143,6 +143,7 @@ body {
 
 
 /* -- MAIN SECTION -- */
+
 main {
 	font-family: "Open sans";
 }
@@ -153,6 +154,7 @@ main h3 {
 }
 
 /* -- PROJECTS SECTION -- */
+
 .project-cards {
 	margin: 1rem;
 	display: grid;
