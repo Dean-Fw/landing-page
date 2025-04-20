@@ -6,6 +6,9 @@ on:
     #  - main
     paths:
       - content/**
+    workflow_dispatch:
+
+
 
 jobs:
   build:
@@ -24,7 +27,7 @@ jobs:
       uses: azure/CLI@v1
       with:
         inlineScript: |
-            az storage blob upload-batch --account-name stdfwlandingstorage --auth-mode key -d '$web' -s .
+            az storage blob upload-batch --account-name stdfwlandingstorage --auth-mode key -d '$web' -s ./content
   # Azure logout
     - name: logout
       run: |
