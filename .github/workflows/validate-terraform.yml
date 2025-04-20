@@ -4,13 +4,15 @@ on:
     branches:
       - '*'
       - '!main'
+    paths:
+      - ./iac
 jobs:
   Check-IaC:
     runs-on: ubuntu-latest
     defaults:
       run:
         shell: bash
-        working-directory: ./src/storage
+        working-directory: ./iac/storage
     steps:
       - name: Checkout
         uses: actions/checkout@v3
