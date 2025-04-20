@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>dfw</title>
+		<link rel="stylesheet" href="/static/styles.css">
+		<!-- > SansSerrif</!-->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+		<!-- > Open Sans</!-->
+		<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+		<meta charset="UTF-8">
+
+
+	</head>
+	<body>
+		<nav class="nav-bar">
+			<h3>Dean Williams</h3>
+			<ul>
+				<li><a id="github" href="https://github.com/Dean-Fw/">GitHub</a></li>
+				<li><a id="linkedin" href="https://www.linkedin.com/in/dean-fw">LinkedIn</a></li>
+			</ul>
+		</nav>
+		<header class="hero-section">
+
+			<div class="hero-section-text-content">
+				<h1>Dean Williams</h1>
+				<h3>Software Engineer</h3>
+				<p><i id="tag">Keep on keeping on!</i> &#x1F44d;</p>
+			</div>
+			<img src="/static/dean-thumbs-up.gif" alt="Gif of Dean smiling and giving a thumbs up"></img>
+			<script>
+				const setTag = () => {
+					const listOfTags = ["Keep on keeping on!", "You're pretty good!", "Kept ya waiting huh?"];
+					const random = Math.floor(Math.random() * listOfTags.length);
+
+					document.getElementById("tag").innerHTML = listOfTags[random];
+				}
+
+				window.onload = setTag();
+
+			</script>
+		</header>
+		<main class="site-container">
+			<section class="about-me">
+				<h3>About me</h3>
+				<p>Hello, world! My name is Dean, a software engineer from the UK. I've worked primarily on backend projects and creating Infrastructure as Code solutions to host them. This has involved becoming very familiar with <b>.NET with C#</b>, <b>T-SQL</b>, <b>Terraform</b>, and <b>Azure DevOps pipelines</b>.</p>
+				<p>While I spend most of my professional time working on the backend, I was professionally trained to be a full-stack engineer via a graduate scheme. This involved working on a few full-stack projects using <b>React</b>, <b>.NET with C#</b> and <b>T-SQL</b>. I have felt the front-end side of that training rust a bit. So I thought. why not put together a static site to brush those skills off while also improving my knowledge of building and deploying IaC solutions by hosting it!</p>
+			</section>
+			<section class="projects-heading">
+				<h3>Projects</h3>
+				<p>This section is pretty empty at the moment, but I hope to be able to use this static site as a place to show off some of hte personal projects I work on. So if you are ever <b><i>extremely bored</i></b>, feel free to check this area out!</p>
+
+			</section>
+			<section class="project-cards breakout">
+				<a href="https://github.com/Dean-Fw/landing-page">
+					<div class="project-card">
+						<h4>This Site!</h4>
+						<p>The IaC for this site is written in <b>Terraform</b>, which configures a standard storage account and a static site container to host the website files. The site is composed solely of <b>HTML</b> and <b>CSS</b>, with a touch of <b>JavaScript</b>. When building the site I wanted to focus on <b>responsive CSS design</b>, leading me to learn a lot about <b>container and media queries</b>, along with <b>custom CSS properties</b>.</p>
+						<p>To deploy my IaC and Static site files, I chose to use <b>GitHub Actions</b>. The technology was new to me, as I in my working life I have only really used <b>Azure DevOps pipelines</b> to set up automated jobs. <b>Actions</b> are ran from YAML workflow files which felt to be a more event based way of triggering your jobs. Overall I quite like a lot of the aspects of <b>Actions and Workflows</b> and hope to improve on my skills in the area through creating future projects.</p>
+
+					</div>
+				</a>
+			</section>
+		</main>
+		</div>
+	</body>
+</html>
