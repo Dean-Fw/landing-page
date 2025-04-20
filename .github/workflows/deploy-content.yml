@@ -1,0 +1,33 @@
+name: Deploy Content to Storage
+
+on:
+  push:
+    branches: 
+      - main
+    paths:
+      - ./content
+
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash
+        working-directory: ./content
+    steps:
+    - uses: actions/checkout@v3
+    - uses: azure/login@v2
+      with:
+        creds: ${{ secrets.SPN_CREDS }}
+
+    - name: Upload to blob storage
+      uses: azure/CLI@v1
+      with:
+        inlineScript: |
+            az storage blob upload-batch --account-name stdfwlandingstorage --auth-mode key -d '$web' -s .
+  # Azure logout
+    - name: logout
+      run: |
+            az logout
+      if: always()
