@@ -1,17 +1,17 @@
 .open-sans-web {
-  font-family: "Open Sans", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 300;
-  font-style: normal;
-  font-variation-settings:
-    "wdth" 100;
+	font-family: "Open Sans", sans-serif;
+	font-optical-sizing: auto;
+	font-weight: 300;
+	font-style: normal;
+	font-variation-settings:
+	"wdth" 100;
 }
 
 .source-sans-3-web {
-  font-family: "Source Sans 3", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 100;
-  font-style: normal;
+	font-family: "Source Sans 3", sans-serif;
+	font-optical-sizing: auto;
+	font-weight: 100;
+	font-style: normal;
 }
 
 :root {
@@ -71,7 +71,7 @@ body {
 	padding-right: 2rem;
 	font-family: "Open Sans";
 	color: var(--font-colour);
-	
+
 }
 
 .nav-bar a:hover {
@@ -89,7 +89,7 @@ body {
 
 	display: grid;
 	grid-template-columns:
-		minmax(var(--padding-inline), 1fr)[breakout-start] minmax(0, var(--breakout-size)) [content-start] min(100% - (var(--padding-inline) * 2), var(--content-max-width)) [content-end] minmax(0, var(--breakout-size)) [breakout-end] minmax(var(--padding-inline), 1fr);
+	minmax(var(--padding-inline), 1fr)[breakout-start] minmax(0, var(--breakout-size)) [content-start] min(100% - (var(--padding-inline) * 2), var(--content-max-width)) [content-end] minmax(0, var(--breakout-size)) [breakout-end] minmax(var(--padding-inline), 1fr);
 }
 
 .site-container > :not(.breakout) {
@@ -143,6 +143,7 @@ body {
 
 
 /* -- MAIN SECTION -- */
+
 main {
 	font-family: "Open sans";
 }
@@ -153,6 +154,7 @@ main h3 {
 }
 
 /* -- PROJECTS SECTION -- */
+
 .project-cards {
 	margin: 1rem;
 	display: grid;
@@ -181,8 +183,3 @@ main h3 {
 	text-decoration: none;
 	color: var(--font-colour);
 }
-
-@keyframes grow{
-
-}
-

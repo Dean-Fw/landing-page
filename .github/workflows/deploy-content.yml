@@ -5,7 +5,8 @@ on:
     branches: 
       - main
     paths:
-      - ./content
+      - content/**
+
 
 
 jobs:
@@ -25,7 +26,7 @@ jobs:
       uses: azure/CLI@v1
       with:
         inlineScript: |
-            az storage blob upload-batch --account-name stdfwlandingstorage --auth-mode key -d '$web' -s .
+            az storage blob upload-batch --account-name stdfwlandingstorage --auth-mode key -d '$web' -s ./content --overwrite true
   # Azure logout
     - name: logout
       run: |
