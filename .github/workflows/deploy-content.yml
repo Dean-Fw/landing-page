@@ -27,6 +27,12 @@ jobs:
       with:
         inlineScript: |
             az storage blob upload-batch --account-name stdfwlandingstorage --auth-mode key -d '$web' -s ./content --overwrite true
+    - name: Purge CDN
+      uses: azure/CLI@v1
+      with:
+        inlineScript: |
+           az cdn endpoint purge --no-wait --content-paths  "/*" --profile-name "portfolio" --name "landingstore" --resource-group "rg-storage"
+
   # Azure logout
     - name: logout
       run: |
