@@ -26,9 +26,9 @@
 	--font-size-card-title: 2rem;
 	--font-size-text: 1rem;
 
-	--font-size-title-mobile: 3rem;
-	--font-size-subtitle-mobile: 2rem;
-	--font-size-nav-bar-mobole: 1.5rem;
+	--font-size-title-mobile: 1.75rem;
+	--font-size-subtitle-mobile: 1.25rem;
+	--font-size-nav-bar-mobile: 1.2rem;
 }
 
 body {
@@ -49,6 +49,9 @@ body {
 	position: sticky;
 	justify-content: space-between;
 	align-items: center;
+	white-space: nowrap;
+	padding-left: 2%;
+	padding-right: 2%;
 	top: 0;
 	background-color: var(--nav-bar-colour);
 
@@ -56,23 +59,22 @@ body {
 
 .nav-bar h3 {
 	font-family: "Source Sans 3";
-	padding-left: 2rem;
 }
 
 .nav-bar ul {
 	list-style: none;
-	margin: 0;
 	padding: 0;
+	margin: 0;
 }
 
 .nav-bar li {
 	display: inline;
+	margin-right: 5%;
 }
 
 
 .nav-bar a {
 	text-decoration: none;
-	padding-right: 2rem;
 	font-family: "Open Sans";
 	color: var(--font-colour);
 
@@ -80,7 +82,10 @@ body {
 
 @container nav-bar (width < 660px) {
 	.nav-bar > *  {
-		font-size: var(--font-size-nav-bar-mobole);
+		font-size: var(--font-size-nav-bar-mobile);
+	}
+	.nav-bar li {
+		margin: 0; 
 	}
 }
 
@@ -91,7 +96,7 @@ body {
 /* -- SITE CONTAINER -- */
 
 .site-container {
-	--padding-inline: 2rem;
+	--padding-inline: 1rem;
 	--content-max-width: 90ch;
 	--breakout-max-width: 150ch;
 
@@ -167,20 +172,33 @@ body {
 /* -- MAIN SECTION -- */
 
 main {
+	container-type: inline-size;
+	container-name: main;
 	font-family: "Open sans";
 }
 main h3 {
 	font-size: var(--font-size-subtitle);
-	font-weight: 50;
+	font-weight: 200;
 	margin-bottom: 0;
+}
+
+@container main (width < 660px) {
+	main h3 {
+		font-size: var(--font-size-subtitle-mobile);
+	}
+	main p {
+		font-size: var(--font-size-text);
+	}
 }
 
 /* -- PROJECTS SECTION -- */
 
 .project-cards {
-	margin: 1rem;
+	container-type: inline-size;
+	container-name: cards;
+	margin: .5rem;
 	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(50ch, 1fr));
+	grid-template-columns: repeat(auto-fit, minmax(25ch, 1fr));
 	gap: 1.5rem;
 }
 
@@ -204,4 +222,10 @@ main h3 {
 .project-cards a {
 	text-decoration: none;
 	color: var(--font-colour);
+}
+
+@container cards (width < 660px) {
+	.project-card h4 {
+		font-size: var(--font-size-subtitle-mobile);
+	}
 }
