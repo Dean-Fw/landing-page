@@ -1,3 +1,5 @@
 override.tf
 .terraform.lock.hcl
 .terraform
+
+main.go

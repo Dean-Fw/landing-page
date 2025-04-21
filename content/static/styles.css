@@ -21,12 +21,14 @@
 	--nav-bar-colour: rgb(0,0,0);
 	--nav-bar-hover-colour: #ffffff;
 
-
-
 	--font-size-title: 5rem;
 	--font-size-subtitle: 2.5rem;
 	--font-size-card-title: 2rem;
 	--font-size-text: 1rem;
+
+	--font-size-title-mobile: 3rem;
+	--font-size-subtitle-mobile: 2rem;
+	--font-size-nav-bar-mobole: 1.5rem;
 }
 
 body {
@@ -41,6 +43,8 @@ body {
 /* -- NAV BAR -- */
 
 .nav-bar {
+	container-type: inline-size;
+	container-name: nav-bar;
 	display: flex;
 	position: sticky;
 	justify-content: space-between;
@@ -74,6 +78,12 @@ body {
 
 }
 
+@container nav-bar (width < 660px) {
+	.nav-bar > *  {
+		font-size: var(--font-size-nav-bar-mobole);
+	}
+}
+
 .nav-bar a:hover {
 	color: var(--nav-bar-hover-colour);
 }
@@ -103,6 +113,7 @@ body {
 /* -- HERO -- */
 
 .hero-section {
+	container-type: inline-size;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -140,6 +151,17 @@ body {
 	height: 25vh;
 	border-radius: 2rem;
 }
+
+@container (width < 660px) {
+	.hero-section h1 {
+		font-size: var(--font-size-title-mobile);
+	}
+	
+	.hero-section h3 {
+		font-size: var(--font-size-subtitle-mobile);
+	}
+}
+
 
 
 /* -- MAIN SECTION -- */
