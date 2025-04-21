@@ -31,7 +31,7 @@ jobs:
       uses: azure/CLI@v1
       with:
         inlineScript: |
-           az cdn endpoint purge --content-paths  "/*" --profile-name "portfolio" --name "landingstore" --resource-group "rg-storage"
+           az cdn endpoint purge --no-wait --content-paths  "/*" --profile-name "portfolio" --name "landingstore" --resource-group "rg-storage"
 
   # Azure logout
     - name: logout
