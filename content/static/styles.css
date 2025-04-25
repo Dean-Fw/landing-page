@@ -47,6 +47,7 @@ body {
 	container-name: nav-bar;
 	display: flex;
 	position: sticky;
+	z-index: 100;
 	justify-content: space-between;
 	align-items: center;
 	white-space: nowrap;
@@ -197,8 +198,11 @@ main h3 {
 	container-type: inline-size;
 	container-name: cards;
 	margin: .5rem;
+}
+
+.project-cards-grid {
 	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(25ch, 1fr));
+	grid-template-columns: repeat(auto-fit, minmax(40ch, 1fr));
 	gap: 1.5rem;
 }
 
