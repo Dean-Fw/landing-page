@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<title>dfw</title>
+		<title>Dean-Fw</title>
 		<link rel="stylesheet" href="/static/styles.css">
 		<!-- > SansSerrif</!-->
 		<link rel="preconnect" href="https://fonts.googleapis.com">
@@ -9,6 +9,12 @@
 		<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
 		<!-- > Open Sans</!-->
 		<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+
+		<link rel="apple-touch-icon" sizes="180x180" href="/static/favicon/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="/static/favicon/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="/static/favicon/favicon-16x16.png">
+		<link rel="manifest" href="static/favicon/site.webmanifest">
+
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	</head>
@@ -52,14 +58,16 @@
 
 			</section>
 			<section class="project-cards breakout">
-				<a href="https://github.com/Dean-Fw/landing-page">
-					<div class="project-card">
-						<h4>This Site!</h4>
-						<p>The IaC for this site is written in <b>Terraform</b>, which configures a standard storage account and a static site container to host the website files. The site is composed solely of <b>HTML</b> and <b>CSS</b>, with a touch of <b>JavaScript</b>. When building the site I wanted to focus on <b>responsive CSS design</b>, leading me to learn a lot about <b>container and media queries</b>, along with <b>custom CSS properties</b>.</p>
-						<p>To deploy my IaC and Static site files, I chose to use <b>GitHub Actions</b>. The technology was new to me, as I in my working life I have only really used <b>Azure DevOps pipelines</b> to set up automated jobs. <b>Actions</b> are ran from YAML workflow files which felt to be a more event based way of triggering your jobs. Overall I quite like a lot of the aspects of <b>Actions and Workflows</b> and hope to improve on my skills in the area through creating future projects.</p>
+				<div class="project-cards-grid">
+					<a href="https://github.com/Dean-Fw/landing-page">
+						<div class="project-card">
+							<h4>This Site!</h4>
+							<p>The IaC for this site is written in <b>Terraform</b>, which configures a standard storage account and a static site container to host the website files. The site is composed solely of <b>HTML</b> and <b>CSS</b>, with a touch of <b>JavaScript</b>. When building the site I wanted to focus on <b>responsive CSS design</b>, leading me to learn a lot about <b>container and media queries</b>, along with <b>custom CSS properties</b>.</p>
+							<p>To deploy my IaC and Static site files, I chose to use <b>GitHub Actions</b>. The technology was new to me, as I in my working life I have only really used <b>Azure DevOps pipelines</b> to set up automated jobs. <b>Actions</b> are ran from YAML workflow files which felt to be a more event based way of triggering your jobs. Overall I quite like a lot of the aspects of <b>Actions and Workflows</b> and hope to improve on my skills in the area through creating future projects.</p>
 
-					</div>
-				</a>
+						</div>
+					</a>
+				</div>
 			</section>
 		</main>
 		</div>
