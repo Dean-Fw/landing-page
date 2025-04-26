@@ -232,4 +232,8 @@ main h3 {
 	.project-card h4 {
 		font-size: var(--font-size-subtitle-mobile);
 	}
+
+	.project-cards-grid {
+		grid-template-columns: 1fr;
+	}
 }
