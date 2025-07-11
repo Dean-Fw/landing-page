@@ -16,23 +16,6 @@ resource "azurerm_storage_account_static_website" "main" {
   index_document     = "index.html"
 }
 
-resource "azurerm_cdn_frontdoor_profile" "main" {
-  name                = "afd-landingpage"
-  resource_group_name = azurerm_resource_group.main.name
-  sku_name            = "Standard_AzureFrontDoor"
-}
-
-resource "azurerm_cdn_frontdoor_custom_domain" "main" {
-  name                     = "landing-page"
-  cdn_frontdoor_profile_id = azurerm_cdn_frontdoor_profile.main.id
-  host_name                = "landing.dean-fw.uk"
-
-  tls {
-    certificate_type = "ManagedCertificate"
-  }
-}
-
-
 resource "azurerm_role_assignment" "spn_blob_storage_contributor" {
   scope                = azurerm_storage_account.site_storage_account.id
   role_definition_name = "Storage Blob Data Contributor"
