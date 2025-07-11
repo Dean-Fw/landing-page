@@ -9,11 +9,29 @@ resource "azurerm_storage_account" "site_storage_account" {
   location                 = azurerm_resource_group.main.location
   account_tier             = "Standard"
   account_replication_type = "LRS"
+}
 
-  static_website {
-    index_document = "index.html"
+resource "azurerm_storage_account_static_website" "main" {
+  storage_account_id = azurerm_storage_account.site_storage_account.id
+  index_document     = "index.html"
+}
+
+resource "azurerm_cdn_frontdoor_profile" "main" {
+  name                = "afd-landingpage"
+  resource_group_name = azurerm_resource_group.main.name
+  sku_name            = "Standard_AzureFrontDoor"
+}
+
+resource "azurerm_cdn_frontdoor_custom_domain" "main" {
+  name                     = "landing-page"
+  cdn_frontdoor_profile_id = azurerm_cdn_frontdoor_profile.main.id
+  host_name                = "landing.dean-fw.uk"
+
+  tls {
+    certificate_type = "ManagedCertificate"
   }
 }
+
 
 resource "azurerm_role_assignment" "spn_blob_storage_contributor" {
   scope                = azurerm_storage_account.site_storage_account.id
