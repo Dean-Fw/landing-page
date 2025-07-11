@@ -23,10 +23,10 @@ resource "azurerm_cdn_frontdoor_origin" "main" {
 
   certificate_name_check_enabled = false
 
-  host_name          = "landing.dean-fw.uk"
+  host_name          = azurerm_storage_account.main.primary_web_host
   http_port          = 80
   https_port         = 443
-  origin_host_header = "landing.dean-fw.uk"
+  origin_host_header = azurerm_storage_account.main.primary_web_host
   priority           = 1
   weight             = 1
 }
@@ -34,6 +34,7 @@ resource "azurerm_cdn_frontdoor_origin" "main" {
 resource "azurerm_cdn_frontdoor_endpoint" "main" {
   name                     = "landingpage-endpoint"
   cdn_frontdoor_profile_id = azurerm_cdn_frontdoor_profile.main.id
+
 }
 
 resource "azurerm_cdn_frontdoor_rule_set" "main" {
